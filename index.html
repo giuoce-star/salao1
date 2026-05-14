@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estúdio Marina — Estética facial e design de sobrancelhas em Lauro de Freitas</title>
+<meta name="description" content="Estética facial avançada, micropigmentação e design de sobrancelhas em Vilas do Atlântico, Lauro de Freitas. Atendimento individual em ambiente reservado.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #F7F0E8;
+    --bg-deeper: #EFE5D8;
+    --ink: #2A1F18;
+    --ink-soft: #5B4A3D;
+    --gold: #B08A5B;
+    --gold-soft: #C9A87C;
+    --nude: #E8D5C4;
+    --line: rgba(42, 31, 24, 0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 1; opacity: 0.4;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+  @media (max-width: 640px) { .container { padding: 0 20px; } }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 22px 0; z-index: 100;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(247, 240, 232, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 22px; font-weight: 400; letter-spacing: 0.04em;
+  }
+  .logo em { font-style: italic; color: var(--gold); font-weight: 300; }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    color: var(--ink); text-decoration: none;
+    font-size: 13px; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 400;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  @media (max-width: 768px) { .nav-links { display: none; } }
+
+  .hero {
+    min-height: 100vh;
+    padding: 140px 0 80px;
+    display: flex; align-items: center;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero { padding: 120px 0 60px; }
+  }
+  .hero-eyebrow {
+    font-size: 12px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 32px; height: 1px; background: var(--gold);
+  }
+  .hero h1 {
+    font-size: clamp(48px, 7vw, 92px);
+    margin-bottom: 28px;
+  }
+  .hero h1 em { font-style: italic; font-weight: 300; color: var(--gold); }
+  .hero p.lede {
+    font-size: 18px; color: var(--ink-soft);
+    max-width: 480px; margin-bottom: 40px; line-height: 1.7;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 32px;
+    background: var(--ink); color: var(--bg);
+    text-decoration: none; font-size: 13px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 500; transition: all 0.3s;
+    border: 1px solid var(--ink);
+  }
+  .btn:hover { background: transparent; color: var(--ink); }
+  .btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+  .hero-image {
+    position: relative; aspect-ratio: 4/5;
+    overflow: hidden; background: var(--nude);
+  }
+  .hero-image img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(0.9);
+  }
+  .hero-image::after {
+    content: ''; position: absolute;
+    top: 24px; right: 24px; bottom: 24px; left: 24px;
+    border: 1px solid rgba(247, 240, 232, 0.4);
+    pointer-events: none;
+  }
+
+  section { padding: 120px 0; position: relative; }
+  @media (max-width: 768px) { section { padding: 80px 0; } }
+  .section-label {
+    font-size: 12px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .section-label::before {
+    content: ''; width: 32px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-size: clamp(36px, 5vw, 56px);
+    max-width: 700px; margin-bottom: 60px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); font-weight: 300; }
+
+  .about { background: var(--bg-deeper); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px; align-items: center;
+  }
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 50px; }
+  }
+  .about-image {
+    aspect-ratio: 3/4; overflow: hidden; background: var(--nude);
+  }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85); }
+  .about-text h2 { font-size: clamp(32px, 4.5vw, 48px); margin-bottom: 32px; }
+  .about-text p {
+    font-size: 17px; color: var(--ink-soft);
+    margin-bottom: 20px; line-height: 1.8;
+  }
+  .signature {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 24px; color: var(--gold); margin-top: 32px;
+  }
+
+  .servicos-list { border-top: 1px solid var(--line); }
+  .servico {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 40px; align-items: center;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.3s; cursor: pointer;
+    text-decoration: none; color: inherit;
+  }
+  .servico:hover { padding-left: 16px; }
+  .servico:hover .servico-numero { color: var(--gold); }
+  .servico-numero {
+    font-family: 'Fraunces', serif; font-size: 20px;
+    color: var(--ink-soft); font-style: italic;
+    transition: color 0.3s;
+  }
+  .servico-info h3 { font-size: clamp(22px, 2.5vw, 32px); margin-bottom: 6px; }
+  .servico-info p { font-size: 14px; color: var(--ink-soft); max-width: 520px; }
+  .servico-preco {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    font-weight: 400; white-space: nowrap; color: var(--ink);
+  }
+  .servico-preco small {
+    display: block; font-family: 'Manrope', sans-serif;
+    font-size: 11px; color: var(--ink-soft);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px;
+  }
+  @media (max-width: 640px) {
+    .servico { grid-template-columns: 40px 1fr; gap: 20px; padding: 28px 0; }
+    .servico-preco { grid-column: 2; padding-top: 8px; }
+  }
+
+  .galeria { background: var(--bg-deeper); }
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .gallery-item {
+    aspect-ratio: 4/5; overflow: hidden;
+    background: var(--nude); position: relative;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: saturate(0.9);
+  }
+  .gallery-item:hover img { transform: scale(1.06); }
+  .gallery-item:nth-child(2) { transform: translateY(40px); }
+  @media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item:nth-child(2) { transform: none; }
+  }
+
+  .local-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  }
+  @media (max-width: 900px) {
+    .local-grid { grid-template-columns: 1fr; gap: 50px; }
+  }
+  .info-block { margin-bottom: 40px; }
+  .info-block h4 {
+    font-size: 14px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 14px;
+    font-family: 'Manrope', sans-serif; font-weight: 500;
+  }
+  .info-block p, .info-block li {
+    font-size: 17px; color: var(--ink-soft);
+    line-height: 1.8; list-style: none;
+  }
+  .info-block li span { color: var(--ink); display: inline-block; min-width: 110px; }
+  .info-block a { color: var(--gold); text-decoration: none; }
+  .map-wrapper {
+    aspect-ratio: 1; background: var(--nude);
+    overflow: hidden; position: relative;
+  }
+  .map-wrapper iframe {
+    width: 100%; height: 100%; border: 0;
+    filter: saturate(0.6) sepia(0.15);
+  }
+
+  .cta-final {
+    background: var(--ink); color: var(--bg);
+    text-align: center;
+  }
+  .cta-final .section-label {
+    color: var(--gold-soft); justify-content: center;
+  }
+  .cta-final h2 {
+    font-size: clamp(40px, 6vw, 72px);
+    max-width: 800px; margin: 0 auto 40px; color: var(--bg);
+  }
+  .cta-final h2 em { font-style: italic; color: var(--gold-soft); font-weight: 300; }
+  .cta-final .btn {
+    background: var(--bg); color: var(--ink); border-color: var(--bg);
+  }
+  .cta-final .btn:hover { background: transparent; color: var(--bg); }
+
+  footer {
+    padding: 50px 0 40px;
+    border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--ink-soft);
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 20px;
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px;
+    width: 60px; height: 60px;
+    background: #25D366; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35), 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 99; text-decoration: none;
+    transition: all 0.3s;
+    animation: pulse 2.4s infinite;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  .wa-float svg { width: 32px; height: 32px; fill: white; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35), 0 2px 8px rgba(0,0,0,0.15), 0 0 0 0 rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35), 0 2px 8px rgba(0,0,0,0.15), 0 0 0 14px rgba(37, 211, 102, 0); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  .hero-text > * { opacity: 0; transform: translateY(20px); animation: rise 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .hero-text > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-text > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-text > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-text > *:nth-child(4) { animation-delay: 0.55s; }
+  .hero-image { opacity: 0; animation: fadeIn 1.2s 0.4s forwards; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { to { opacity: 1; } }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container nav-inner">
+    <div class="logo">estúdio <em>marina</em></div>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Trabalhos</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Vilas do Atlântico · Lauro de Freitas</div>
+        <h1>Cuidado <em>pensado</em>,<br>resultado natural.</h1>
+        <p class="lede">Estética facial avançada, design de sobrancelhas e micropigmentação em um espaço reservado, atendimento um a um.</p>
+        <a href="https://wa.me/5571999999999?text=Oi%20Marina%2C%20vim%20pelo%20site%20e%20queria%20agendar%20uma%20avalia%C3%A7%C3%A3o" class="btn" target="_blank" rel="noopener">
+          Agendar pelo WhatsApp
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=80&auto=format&fit=crop" alt="Espaço do Estúdio Marina">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="sobre" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=700&q=80&auto=format&fit=crop" alt="Marina Souza">
+      </div>
+      <div class="about-text reveal">
+        <div class="section-label">Quem cuida de você</div>
+        <h2>Cinco anos cuidando da pele de mulheres que <em>não têm tempo</em> a perder.</h2>
+        <p>Comecei o estúdio em casa, atendendo amigas. Hoje recebo no meu espaço em Vilas do Atlântico mulheres que querem se sentir bem cuidadas sem virar refém de salão.</p>
+        <p>Trabalho com agenda fechada e atendimento individual — você não divide a sala com ninguém, e a gente conversa antes de qualquer procedimento. Quem volta, volta porque confia.</p>
+        <div class="signature">— Marina Souza</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">O que faço</div>
+      <h2 class="section-title">Serviços que <em>respeitam</em> seu tempo e sua pele.</h2>
+    </div>
+
+    <div class="servicos-list reveal">
+      <a href="https://wa.me/5571999999999?text=Oi%20Marina%2C%20gostaria%20de%20saber%20sobre%20micropigmenta%C3%A7%C3%A3o" class="servico" target="_blank" rel="noopener">
+        <div class="servico-numero">01</div>
+        <div class="servico-info">
+          <h3>Micropigmentação de sobrancelhas e lábios</h3>
+          <p>Técnica fio a fio ou esfumado. Avaliação prévia obrigatória, retoque incluso após 30 dias.</p>
+        </div>
+        <div class="servico-preco">
+          <small>a partir de</small>
+          R$ 600
+        </div>
+      </a>
+
+      <a href="https://wa.me/5571999999999?text=Oi%20Marina%2C%20gostaria%20de%20agendar%20design%20de%20sobrancelhas" class="servico" target="_blank" rel="noopener">
+        <div class="servico-numero">02</div>
+        <div class="servico-info">
+          <h3>Design de sobrancelhas com henna</h3>
+          <p>Mapeamento facial + pigmentação natural. Duração média de 15 a 20 dias.</p>
+        </div>
+        <div class="servico-preco">
+          <small>valor</small>
+          R$ 80
+        </div>
+      </a>
+
+      <a href="https://wa.me/5571999999999?text=Oi%20Marina%2C%20gostaria%20de%20saber%20sobre%20limpeza%20de%20pele" class="servico" target="_blank" rel="noopener">
+        <div class="servico-numero">03</div>
+        <div class="servico-info">
+          <h3>Limpeza de pele profunda</h3>
+          <p>Extração suave, esfoliação enzimática e máscara calmante. Indicado a cada 30 a 45 dias.</p>
+        </div>
+        <div class="servico-preco">
+          <small>valor</small>
+          R$ 180
+        </div>
+      </a>
+
+      <a href="https://wa.me/5571999999999?text=Oi%20Marina%2C%20gostaria%20de%20saber%20sobre%20peeling" class="servico" target="_blank" rel="noopener">
+        <div class="servico-numero">04</div>
+        <div class="servico-info">
+          <h3>Peeling químico</h3>
+          <p>Renovação celular para manchas, textura e brilho. Protocolo personalizado.</p>
+        </div>
+        <div class="servico-preco">
+          <small>a partir de</small>
+          R$ 220
+        </div>
+      </a>
+
+      <a href="https://wa.me/5571999999999?text=Oi%20Marina%2C%20gostaria%20de%20saber%20sobre%20drenagem%20facial" class="servico" target="_blank" rel="noopener">
+        <div class="servico-numero">05</div>
+        <div class="servico-info">
+          <h3>Drenagem facial e massagem relaxante</h3>
+          <p>Reduz inchaço, marca de expressão e tensão acumulada. Ideal antes de eventos.</p>
+        </div>
+        <div class="servico-preco">
+          <small>valor</small>
+          R$ 150
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="galeria">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Resultados reais</div>
+      <h2 class="section-title">Trabalhos feitos no <em>estúdio</em>.</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80&auto=format&fit=crop" alt="Trabalho 1"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80&auto=format&fit=crop" alt="Trabalho 2"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&auto=format&fit=crop" alt="Trabalho 3"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80&auto=format&fit=crop" alt="Trabalho 4"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1583241800698-9c2e29ea9b94?w=600&q=80&auto=format&fit=crop" alt="Trabalho 5"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&q=80&auto=format&fit=crop" alt="Trabalho 6"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Onde estamos</div>
+      <h2 class="section-title">Vilas do Atlântico,<br><em>Lauro de Freitas.</em></h2>
+    </div>
+    <div class="local-grid reveal">
+      <div>
+        <div class="info-block">
+          <h4>Endereço</h4>
+          <p>Av. Praia de Itapuã, 1234<br>Vilas do Atlântico — Lauro de Freitas/BA<br>CEP 42700-000</p>
+        </div>
+        <div class="info-block">
+          <h4>Horário</h4>
+          <ul>
+            <li><span>Seg — Sex</span>09h às 19h</li>
+            <li><span>Sábado</span>09h às 14h</li>
+            <li><span>Domingo</span>Fechado</li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <h4>Contato</h4>
+          <p>WhatsApp: (71) 9 9999-9999<br>Instagram: <a href="#">@estudiomarina</a></p>
+        </div>
+      </div>
+      <div class="map-wrapper">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-38.32%2C-12.91%2C-38.28%2C-12.87&layer=mapnik" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Vamos cuidar de você</div>
+      <h2>Sua agenda <em>com vaga</em> hoje. A nossa quase fechada.</h2>
+      <a href="https://wa.me/5571999999999?text=Oi%20Marina%2C%20vim%20pelo%20site%20e%20queria%20agendar" class="btn" target="_blank" rel="noopener">
+        Agendar pelo WhatsApp
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© 2026 Estúdio Marina — Lauro de Freitas/BA</div>
+    <div>Site por <a href="#">Giulia Studio</a></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5571999999999?text=Oi%20Marina%2C%20vim%20pelo%20site" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.86.745 5.66 2.156 8.122L.07 32l7.736-2.027a15.94 15.94 0 008.193 2.263h.001c8.836 0 16-7.164 16-16S24.836.396 16 .396zm0 29.207a13.21 13.21 0 01-6.737-1.846l-.483-.287-4.587 1.203 1.224-4.473-.314-.5a13.205 13.205 0 01-2.026-7.104c0-7.298 5.937-13.236 13.235-13.236s13.236 5.938 13.236 13.236c0 7.297-5.938 13.236-13.236 13.236l-.012-.229zm7.243-9.91c-.397-.198-2.35-1.16-2.715-1.293-.364-.132-.629-.198-.893.199-.265.397-1.024 1.292-1.256 1.557-.232.265-.463.298-.86.099-.398-.199-1.679-.619-3.198-1.973-1.183-1.054-1.981-2.356-2.213-2.753-.232-.397-.025-.612.174-.81.18-.179.398-.464.596-.696.198-.232.265-.397.397-.662.132-.265.066-.497-.033-.696-.099-.199-.893-2.153-1.224-2.946-.321-.774-.65-.67-.893-.682-.232-.012-.497-.014-.762-.014a1.46 1.46 0 00-1.058.497c-.364.397-1.39 1.358-1.39 3.312s1.422 3.84 1.621 4.105c.198.265 2.797 4.27 6.776 5.99 2.367 1.022 3.29 1.108 4.473.93.722-.107 2.35-.96 2.681-1.886.331-.927.331-1.722.232-1.886-.099-.165-.364-.265-.762-.464z"/></svg>
+</a>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  });
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
